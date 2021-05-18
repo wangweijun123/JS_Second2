@@ -1,6 +1,7 @@
 {
   "strings": {
     "hello": "Hello",
-    "world": "World"
+    "world": "World",
+    "array": "Array {0}type parameter substitution-{1}"
   }
 }
