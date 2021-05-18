@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:orientation="vertical"
+    ohos:width="match_parent">
+
+    <Text
+        ohos:background_element="$graphic:background_ability_main"
+        ohos:height="match_content"
+        ohos:id="$+id:text_helloworld"
+        ohos:layout_alignment="horizontal_center"
+        ohos:text="$string:thread_study"
+        ohos:text_size="50"
+        ohos:width="match_content"
+        />
+
+    <Button
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:text="使用EventHandler 发送 innerEvent"
+        ohos:text_size="20vp"
+        ohos:id="$+id:threadTest"/>
+
+    <Button
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:text="使用EventHandler 发送任务postTask"
+        ohos:text_size="20vp"
+        ohos:top_margin="10vp"
+        ohos:id="$+id:postTaskTest"/>
+
+    <Button
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:text="在新创建的线程里投递事件到原线程"
+        ohos:text_size="20vp"
+        ohos:top_margin="10vp"
+        ohos:id="$+id:uiThreadTest"/>
+
+
+</DirectionalLayout>
