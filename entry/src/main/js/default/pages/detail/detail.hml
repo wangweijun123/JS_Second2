@@ -1,0 +1,40 @@
+<div class="container">
+    <button style="font-size: 50px; text-color: red;"   class="button" type="capsule" value="跳转下一个页面，更多期待" onclick="jumpThirdPage"></button>
+
+    <div class="container-title">
+        <!-- 做儿子的我的宽度如果没设置 -->
+        <text class="title">父控件是横向摆放,我的是内容宽度</text>
+    </div>
+
+    <div class="container-title-colomn">
+    <!-- 父控件是纵向摆放 -->
+        <text class="title">父控件是纵向摆放,我的是父亲的宽度</text>
+    </div>
+    <!-- 父控件横向，确定高度，子控件没有设置宽高, 子控件的宽就是包裹内容，高度是父控件高度 -->
+    <div class="text-container-row">
+        <text class="text1">dddd</text>
+        <text class="text2">xxxx</text>
+    </div>
+    <div class="text-container-column">
+        <text class="text3">父控件纵向</text>
+        <text class="text4">xxxx</text>
+    </div>
+
+    <div class="fixed-height-container">
+        <text class="text1">dddd</text>
+        <text class="text2">xxxx</text>
+        <image class="image" src="/common/ic_health_assistant.png"/>
+    </div>
+
+    <button type="capsule" value="Go back" onclick="launch"></button>
+    <button class="button" type="capsule" value="调用java内部服务callAbility(指定java侧异步处理)" onclick="callInternalService"></button>
+    <button class="button" type="capsule" value="调用java内部服务callAbility(指定java侧同步处理)" onclick="callInternalServiceSync"></button>
+    <text>{{result}}</text>
+    <button class="button" type="capsule" value="调用java外部进程的部服务" onclick="callOutterService"></button>
+    <button class="button" type="capsule" value="js数据类型测试" onclick="dataTypeTest"></button>
+    <button class="button" type="capsule" value="js array 数组测试" onclick="arrayTest"></button>
+    <button class="button" type="capsule" value="js undefined 测试" onclick="undefinedTest"></button>
+    <button class="button" type="capsule" value="js 函数内置一个nb的形参arguments数组" onclick="useArguments"></button>
+    <button class="button" type="capsule" value="js 创建对象" onclick="creatObjByConstructor"></button>
+
+</div>
