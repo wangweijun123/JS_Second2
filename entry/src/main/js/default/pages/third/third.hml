@@ -1,0 +1,45 @@
+<div class="container">
+
+    <div >
+        <text >{{name}} {{age}}</text>
+    </div>
+    <button style="text-color: red;" class="button" type="capsule" value="js跳转java页面更多功能" onclick="js2JavaPage"></button>
+    <button class="button" type="capsule" value="js 创建dialog" onclick="creatDialog"></button>
+    <button class="button" type="capsule" value="js给java注册callback对象(订阅异步)" onclick="registerJsCallbackToJava10"></button>
+    <button class="button" type="capsule" value="js给java注册callback对象(订阅同步)" onclick="registerJsCallbackToJavaSync"></button>
+
+    <button class="button" type="capsule" value="async 异步调用" onclick="asyncAwait"></button>
+    <button class="button" type="capsule" value="async 异步调用02" onclick="asyncAwait2"></button>
+    <button class="button" type="capsule" value="async 测试异常" onclick="asyncAwait3"></button>
+    <button class="button" type="capsule" value="js文件引用其他的js文件测试" onclick="callOtherJs"></button>
+
+    <dialog id="myDialog">
+        <div style="flex-direction: column;justify-content: center; align-items: center;">
+            <text style="background-color: red;">this is title</text>
+            <text style="height: 200px; background-color: aqua;">this is content</text>
+        </div>
+    </dialog>
+<!-- 不使用占位符，text中显示“Hello world!” -->
+    <text>{{ $t('strings.hello') }}</text>
+<!-- 具名占位符格式，运行时将占位符{name}替换为“Hello world” -->
+    <text>{{ $t('strings.object', { name: 'Hello world' }) }}</text>
+    <text>{{ $t('strings.object', { name: $t('strings.hello') }) }}</text>
+    <!-- 先在js中获取资源内容，并将占位符{name}替换为“Hello world”，再在text中显示“Object parameter substitution-Hello world” -->
+    <text>{{ replaceObject }}</text>
+
+    <text >
+        <span style="color: red;">{{ $t('strings.object', { name: $t('strings.hello') }) }}</span>
+    </text>
+
+    <text id="textContainer" style="color: blueviolet;">
+        <span style="color: red;">{{ $t('strings.hello') }}</span>
+        <span style="color: blue;">{{ $t('strings.world') }}</span>
+    </text>
+
+    <!--<text class="privacy" onclick="openUrl">
+        <span>{{ $t('strings.userAgreement') }}</span>
+        <span style="color : royalblue;">{{ $t('strings.faName') }}{{ $t('strings.privacyStatement') }}</span>
+    </text>-->
+<!-- 数字占位符格式，运行时将占位符{0}替换为“Hello world” -->
+    <text>{{ $t('strings.array', ['Hello world', 'xxxxx']) }}</text>
+</div>
