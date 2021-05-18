@@ -2,11 +2,19 @@
   "string": [
     {
       "name": "app_name",
-      "value": "JS_Second"
+      "value": "JS_second"
     },
     {
       "name": "mainability_description",
       "value": "JS_Phone_Empty Feature Ability"
+    },
+    {
+      "name": "HelloWorld",
+      "value": "this is java page"
+    },
+    {
+      "name": "thread_study",
+      "value": "线程切换测试"
     }
   ]
 }
