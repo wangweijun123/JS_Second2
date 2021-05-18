@@ -1,6 +1,11 @@
 {
   "strings": {
     "hello": "您好",
-    "world": "世界"
+    "world": "世界",
+    "age": 10,
+    "object": "Object parameter substitution-{name}",
+    "array": "Array type parameter substitution-{0}{1}",
+    "symbol": "@#$%^&*()_+-={}[]\\|:;\"'<>,./?",
+    "object2": "Object parameter substitution-{name}-----{age}"
   }
 }
