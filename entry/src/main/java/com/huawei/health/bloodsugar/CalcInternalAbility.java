@@ -5,6 +5,7 @@ import ohos.aafwk.content.Operation;
 import ohos.ace.ability.AceInternalAbility;
 // ohos相关接口包
 import ohos.app.AbilityContext;
+import ohos.hiviewdfx.HiLog;
 import ohos.rpc.IRemoteObject;
 import ohos.rpc.MessageOption;
 import ohos.rpc.MessageParcel;
@@ -26,6 +27,8 @@ public class CalcInternalAbility extends AceInternalAbility {
     private static final int ERROR = -1;
     private static final int SUCCESS = 0;
     private static final int PLUS = 1001;
+    private static final int CHENG = 1002;
+    private static final int CHU = 1003;
     private static final int REGISTER_JS_CALLBACK = 10000;
     private static final int START_ABILITY = 9999;
 
@@ -43,7 +46,8 @@ public class CalcInternalAbility extends AceInternalAbility {
 
 
     public boolean onRemoteRequest(int code, MessageParcel data, MessageParcel reply, MessageOption option) {
-        LogUtil.info(TAG, "MainAbility::CalcInternalAbility onRemoteRequest code:"+code + " option:"+option);
+        LogUtil.info(TAG, "MainAbility::CalcInternalAbility onRemoteRequest code:"+code + " option:"+option
+        +", tid:"+Thread.currentThread().getId() + ", " + Thread.currentThread().getName());
         try {
             Thread.sleep(500);
         } catch (InterruptedException e) {
@@ -76,6 +80,14 @@ public class CalcInternalAbility extends AceInternalAbility {
                         return false;
                     }
                 }
+                break;
+            }
+            case CHENG: {
+                if (plus(data, reply, option, 3000)) return false;
+                break;
+            }
+            case CHU: {
+                if (plus(data, reply, option, 4000)) return false;
                 break;
             }
             case REGISTER_JS_CALLBACK: {
@@ -118,6 +130,39 @@ public class CalcInternalAbility extends AceInternalAbility {
             }
         }
         return true;
+    }
+
+    private boolean plus(MessageParcel data, MessageParcel reply,
+                         MessageOption option, long sleepTime) {
+        try {
+            Thread.sleep(sleepTime);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        String zsonStr = data.readString();
+        RequestParam param = ZSONObject.stringToClass(zsonStr, RequestParam.class);
+        // 返回结果当前仅支持String，对于复杂结构可以序列化为ZSON字符串上报
+        Map<String, Object> zsonResult = new HashMap<String, Object>();
+        zsonResult.put("code", SUCCESS);
+        zsonResult.put("abilityResult", param.getFirstNum() + param.getSecondNum());
+        // SYNC
+        if (option.getFlags() == MessageOption.TF_SYNC) {
+            HiLog.info(MainAbility.LABEL_LOG, "MainAbility::CalcInternalAbility 同步调用:");
+            reply.writeString(ZSONObject.toZSONString(zsonResult));
+        } else {
+            // ASYNC
+            HiLog.info(MainAbility.LABEL_LOG, "MainAbility::CalcInternalAbility 异步调用:");
+            MessageParcel reponseData = MessageParcel.obtain();
+            reponseData.writeString(ZSONObject.toZSONString(zsonResult));
+            IRemoteObject remoteReply = reply.readRemoteObject();
+            try {
+                remoteReply.sendRequest(0, reponseData, MessageParcel.obtain(), new MessageOption());
+                reponseData.reclaim();
+            } catch (RemoteException exception) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private boolean startAbility(MessageParcel data, MessageParcel reply, MessageOption option) {
