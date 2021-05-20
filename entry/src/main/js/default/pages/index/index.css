@@ -86,3 +86,15 @@
     width: 250px;
     text-align: center;
 }
+
+.color-red {
+    color: red;
+}
+
+.color-blue {
+    color: blue;
+}
+
+.color-ff {
+    color: #FF7FD4;
+}
