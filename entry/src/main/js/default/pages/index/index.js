@@ -12,7 +12,8 @@ export default {
         number:0,
         inputValue: "",
         isCommit:false,
-        persons:[]
+        persons:[],
+        itemStyle:['color-red', 'color-blue', 'color-ff']
     },
     onInit() {
         this.title = this.$t('strings.world');
@@ -29,7 +30,8 @@ export default {
         console.info("update clickZan: ");
         this.number = this.number + 1;
         this.isZan = !this.isZan;
-        this.persons = ['a', 'b', 'c'];
+//        this.persons = ['a', 'b', 'c'];
+        this.persons = [{index:0, name:'x00000'}, {index:1, name:'x11111'}, {index:2, name:'x22222'}];
     },
     /* js界面 跳转 js界面*/
     launch() {
