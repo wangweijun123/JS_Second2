@@ -223,5 +223,15 @@ export default {
     callOtherJs() {
         //        new Promise()
         common.openBluetoothAdapter();
-    }
+    },
+    jumpfourthPage() {
+        console.info('fourth ...');
+        router.push({
+            uri: 'pages/fourth/fourth',
+            params: {
+                name: 'duanxia',
+                age: 18
+            }
+        });
+    },
 }
