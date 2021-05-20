@@ -1,0 +1,16 @@
+<!-- xxx.hml -->
+<element name='comp2' src='../common/component/comp.hml'></element>
+<div class="container">
+    <comp2 @cancle-button="textClicked"
+           @child-pre-button="xxxxx"
+           @sync-child-state="syncChildState"
+           show-obj = "{{isFull}}"></comp2>
+    <button style="text-color: red;" class="button" type="capsule"
+            value="改变value" onclick="changeValue"></button>
+
+    <button style="text-color: red;" class="button" type="capsule"
+            value="text中各种span" onclick="spansInText"></button>
+    <text>
+        <span class="{{itemStyle[$item.myIndex]}}" for="{{text}}">{{$item.content}}</span>
+    </text>
+</div>
