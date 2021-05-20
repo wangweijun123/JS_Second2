@@ -1,0 +1,32 @@
+<!-- xxx.hml -->
+
+<div class="array-container">
+    <text style="color: red; font-size: 25px;">div列表渲染</text>
+<!-- div列表渲染 -->
+<!-- 默认$item代表数组中的元素, $idx代表数组中的元素索引 -->
+    <text style="color: red; font-size: 20px;">
+        默认$item代表数组中的元素, $idx代表数组中的元素索引</text>
+    <div for="{{array}}" tid="id" onclick="changeText">
+        <text style="background-color: blueviolet;">{{$idx}}.{{$item.name}}</text>
+    </div>
+<!-- 自定义元素变量名称 -->
+    <text style="color: red; font-size: 20px;">
+        自定义元素变量名称</text>
+    <div for="{{value in array}}" tid="id" onclick="changeText">
+        <text>{{$idx}}.{{value.name}}</text>
+    </div>
+<!-- 自定义元素变量、索引名称 -->
+    <text style="color: red; font-size: 20px;">
+        自定义元素变量、索引名称</text>
+    <div for="{{(index, value) in array}}" tid="id" onclick="changeText">
+        <text>{{index}}.{{value.name}}</text>
+    </div>
+    <text style="color: red; font-size: 20px;">
+        这里有很多的person</text>
+    <div for="{{persons}}">
+        <text if="{{$idx == (persons.length-1)}}" class="color-ff">
+            索引：{{$idx == (persons.length-1)}} 性别:{{$item.gender}} </text>
+        <text else class="color-blue">
+            索引：{{$idx == (persons.length-1)}} 性别:{{$item.gender}} </text>
+    </div>
+</div>

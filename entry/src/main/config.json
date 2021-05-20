@@ -53,7 +53,8 @@
           "pages/index/index",
           "pages/detail/detail",
           "pages/third/third",
-          "pages/fourth/fourth"
+          "pages/fourth/fourth",
+          "pages/five/five"
         ],
         "name": "default",
         "window": {

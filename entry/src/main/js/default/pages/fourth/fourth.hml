@@ -5,12 +5,22 @@
            @child-pre-button="xxxxx"
            @sync-child-state="syncChildState"
            show-obj = "{{isFull}}"></comp2>
-    <button style="text-color: red;" class="button" type="capsule"
+    <button style="text-color: #fff;" class="button" type="capsule"
             value="改变value" onclick="changeValue"></button>
 
-    <button style="text-color: red;" class="button" type="capsule"
-            value="text中各种span" onclick="spansInText"></button>
+    <button style="text-color: #fff;" class="button" type="capsule"
+            value="打印参数e" onclick="changeText"></button>
+    <button style="text-color: #fff;" class="button" type="capsule"
+            value="跳转第五个界面，数组测试" onclick="jumpFive"></button>
     <text>
         <span class="{{itemStyle[$item.myIndex]}}" for="{{text}}">{{$item.content}}</span>
     </text>
+<!-- 传递额外参数 -->
+    <input type="button" class="btn" value="乘以2" @click="multiply(2)" />
+    <input type="button" class="btn" value="再乘以10" onclick="multiply(10)" />
+    <input type="button" class="btn" value="这里为何可以不用两个花括号引用js的变量"
+           @click="multiply(count)" />
+    <input type="button" class="btn" value="这里用两个花括号引用js变量作为函数参数"
+           @click="multiply({{count}})" />
+
 </div>
