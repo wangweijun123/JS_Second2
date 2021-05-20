@@ -52,7 +52,8 @@
         "pages": [
           "pages/index/index",
           "pages/detail/detail",
-          "pages/third/third"
+          "pages/third/third",
+          "pages/fourth/fourth"
         ],
         "name": "default",
         "window": {
