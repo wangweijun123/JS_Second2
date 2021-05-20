@@ -1,0 +1,19 @@
+/* xxx.css */
+.container {
+    background-color: #f8f8ff;
+    flex: 1;
+    flex-direction: column;
+    align-content: center;
+}
+
+.color-red {
+    color: red;
+}
+
+.color-blue {
+    color: blue;
+}
+
+.color-ff {
+    color: #FF7FD4;
+}
