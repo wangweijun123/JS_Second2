@@ -1,6 +1,6 @@
 <!-- xxx.hml -->
 
-<div class="array-container">
+<div class="array-container" style="padding-left: 20px; padding-right: 20px;">
     <text style="color: red; font-size: 25px;">div列表渲染</text>
 <!-- div列表渲染 -->
 <!-- 默认$item代表数组中的元素, $idx代表数组中的元素索引 -->
@@ -21,12 +21,42 @@
     <div for="{{(index, value) in array}}" tid="id" onclick="changeText">
         <text>{{index}}.{{value.name}}</text>
     </div>
-    <text style="color: red; font-size: 20px;">
-        这里有很多的person</text>
+    <text class="title">
+        这里有很多的person,并且样式是从外部导入的哈</text>
     <div for="{{persons}}">
         <text if="{{$idx == (persons.length-1)}}" class="color-ff">
             索引：{{$idx == (persons.length-1)}} 性别:{{$item.gender}} </text>
         <text else class="color-blue">
             索引：{{$idx == (persons.length-1)}} 性别:{{$item.gender}} </text>
+    </div>
+
+    <div class="container">
+        <input type="button" class="button" value="这是带有状态的按钮(禁用)" onclick="changeBtnDisable"
+               disabled="{{isBtnDisable}}"></input>
+    </div>
+    <input type="button" class="button" value="获取全局数据以及函数" onclick="callGloabMethodAndData"
+           ></input>
+
+    <!-- ##########  -->
+    <!--<div class="container2">
+        <div class="flex-box">
+            <div class="flex-item color-primary"></div>
+            <div class="flex-item color-warning"></div>
+            <div class="flex-item color-success"></div>
+            <div class="flex-item color-primary"></div>
+        </div>
+    </div>-->
+    <div >
+            <div class="child-center" style="width: 25%; height: 250px; background-color: blue;">
+                <image class="image-service" src="/common/otherDevice1.png"></image>
+                <text class="center text-service">xxxxx</text>
+            </div>
+        <div style="background-color: white; width: 50px;"></div>
+            <div style="width: 25%; height: 250px; background-color: red;"></div>
+        <div style="background-color: white; width: 50px;"></div>
+            <div style="width: 25%; height: 250px; background-color: green;"></div>
+        <div style="background-color: white; width: 10px;"></div>
+            <div style="width: 25%; height: 250px; background-color: blue;"></div>
+
     </div>
 </div>
