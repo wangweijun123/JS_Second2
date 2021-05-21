@@ -9,8 +9,23 @@ export default {
                 {id:1, gender:'man', age:47},
                 {id:2, gender:'woman', age:25},
                 {id:3, gender:'man', age:14},
-        ]
-
+        ],
+        isBtnDisable: false,
+        appData: 'localData',
+        appVersion:'1.0',
+        myFunc : function(num) {
+            console.info('这是定义在data中的函数');
+            return num;
+        },
+        keyMap: {
+            OS: 'HarmonyOS',
+            Version: '2.0',
+        },
+    },
+    onInit() {
+       let num = this.myFunc(222)
+        this.keyMap.OS = "modify";
+       console.info(" num:"+num + " "+this.keyMap.OS)
     },
     changeText: function() {
         this.array.pop();
@@ -21,4 +36,12 @@ export default {
             this.array.splice(2, 1, {id:3, name: 'Bary', age: 18});
         }*/
     },
+    changeBtnDisable() {
+        this.isBtnDisable = !this.isBtnDisable;
+    },
+    callGloabMethodAndData() {
+        this.appData = this.$app.$def.globalData.appData;
+        console.info("从app获取全局信息:" + this.appData);
+        this.$app.$def.globalMethod();
+    }
 }
