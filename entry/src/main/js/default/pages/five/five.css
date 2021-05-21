@@ -1,4 +1,6 @@
-/* xxx.css */
+/* css 中两种功能，第一，导入外部样式, 第二，组件的状态改变样式，没了 */
+@import '../common/style/style.css';
+
 .array-container {
     background-color: #f8f8ff;
     flex: 1;
@@ -23,4 +25,59 @@
     border-radius: 0;
     margin-top: 10px;
     margin-left: 10px;
+}
+
+.container {
+    justify-content: center;
+}
+
+.button:disabled {
+    background-color: #888888;/*按钮被激活时，背景颜色变为#888888 */
+}
+.button {
+    background-color: #00f;/*按钮被激活时，背景颜色变为#888888 */
+}
+
+
+/* xxx.css */
+.container2 {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 454px;
+    height: 454px;
+}
+.flex-box {
+    justify-content: space-around;
+    align-items: center;
+    width: 400px;
+    height: 140px;
+    background-color: #ffffff;
+}
+.flex-item {
+    width: 120px;
+    height: 120px;
+    border-radius: 16px;
+}
+.color-primary {
+    background-color: #007dff;
+}
+.color-warning {
+    background-color: #ff7500;
+}
+.color-success {
+    background-color: #41ba41;
+}
+.image-service {
+    object-fit: contain;
+    height: 70px;
+    width: 70px;
+}
+.text-service {
+    font-size: 14px;
+}
+.child-center {
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
 }
