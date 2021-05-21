@@ -3,6 +3,7 @@ export default {
     /*data: {
         showObj: true,
     },*/
+    /* 父子组件数据通信还是用这个属性 */
     props: {
         showObj: true,
     },
