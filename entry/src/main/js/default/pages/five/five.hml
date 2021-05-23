@@ -57,6 +57,7 @@
             <div style="width: 25%; height: 250px; background-color: green;"></div>
         <div style="background-color: white; width: 10px;"></div>
             <div style="width: 25%; height: 250px; background-color: blue;"></div>
-
+        <input type="button" class="button" value="跳转第六个界面" onclick="jumpSixPage"
+                ></input>
     </div>
 </div>

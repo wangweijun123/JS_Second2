@@ -1,0 +1,7 @@
+<!-- parent.hml -->
+<element name='childComp' src='../child/child.hml'></element>
+<div class="item" onclick="textClicked">
+    <text class="text-style" onclick="parentClicked">parent component click</text>
+    <text class="text-style" if="{{showObj}}">hello parent component!</text>
+    <childComp id = "selfDefineChild"></childComp>
+</div>

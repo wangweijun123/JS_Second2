@@ -1,4 +1,5 @@
 // xxx.js
+import router from '@system.router';
 export default {
     data: {
         array: [
@@ -43,5 +44,10 @@ export default {
         this.appData = this.$app.$def.globalData.appData;
         console.info("从app获取全局信息:" + this.appData);
         this.$app.$def.globalMethod();
+    },
+    jumpSixPage() {
+        router.push({
+            uri: 'pages/six/root'
+        })
     }
 }

@@ -1,5 +1,5 @@
 <!-- xxx.hml -->
-<element name='comp2' src='../common/component/comp.hml'></element>
+<element name='comp2' src='../../pages/common/component/comp/comp.hml'></element>
 <div class="container">
     <comp2 @cancle-button="textClicked"
            @child-pre-button="xxxxx"

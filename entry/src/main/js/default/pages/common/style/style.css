@@ -4,3 +4,12 @@
     font-size: 30px;
     color: blue;
 }
+
+.text-style {
+    font-size: 30px;
+    color: blue;
+}
+
+.container {
+    flex-direction: column;
+}

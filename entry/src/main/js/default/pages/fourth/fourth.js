@@ -26,7 +26,7 @@ export default {
         this.isFull = params.detail.showObj;
     },
     changeValue() {
-        console.info("parent Clicked -->改变前 "+this.isFull);
+        console.info("parent Clicked xxxx-->改变前 "+this.isFull);
 
         this.isFull = !this.isFull;
         console.info("parent 改变了..." + this.isFull);
