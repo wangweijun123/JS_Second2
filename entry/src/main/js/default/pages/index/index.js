@@ -3,8 +3,9 @@ export default {
     data: {
         title: "",
         headTitle: "Capture ",
-        paragraphFirst: 'Capture the beauty of light during the transition and fusion of ice and water. At the instant of movement and stillness, softness and rigidity, force and beauty, condensing moving moments.',
+        paragraphFirst: 'Capture the beauty of ',
         paragraphSecond: 'Reflecting the purity of nature, the innovative design upgrades your visual entertainment and ergonomic comfort. Effortlessly capture what you see and let it speak for what you feel.',
+        // 绝对路劲
         middleImage: "/common/meinv.jpg",
         zanImagePressed: "/common/zan_pressed.jpg",
         zanImageNormal: "/common/zan_normal.jpg",
