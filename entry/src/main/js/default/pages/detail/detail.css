@@ -3,7 +3,7 @@
 }
 
 .container-title {
-    flex-direction: row;
+    flex-direction: column;
     background-color: lawngreen;
     /*
     摆放内容，属性定义在容器上，作用与子控件
@@ -20,6 +20,7 @@
 */
 .container-title-colomn {
     flex-direction: column;
+    background-color: #00FCD6;
 }
 
 
@@ -71,5 +72,6 @@
 .image {
     background-color: #D138BD;
     object-fit: contain;
+    border-radius:50px;
 }
 
