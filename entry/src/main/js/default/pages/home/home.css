@@ -1,0 +1,12 @@
+@import '../common/style/style.css';
+.text {
+    font-size: 25px;
+    color: blue;
+    width: 100%;
+    height: 80px;
+}
+
+.container_array {
+    flex-direction: column;
+    background-color: antiquewhite;
+}
