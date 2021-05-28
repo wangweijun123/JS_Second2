@@ -14,6 +14,7 @@ public class MainAbility extends AceAbility {
     public static final HiLogLabel LABEL_LOG = new HiLogLabel(3, 0xD001100, "MainAbility");
     @Override
     public void onStart(Intent intent) {
+
         super.onStart(intent);
         // 注册
         HiLog.info(LABEL_LOG, "MainAbility::onBackground");
