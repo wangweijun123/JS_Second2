@@ -37,8 +37,6 @@ export default {
         console.info("str2=" + str2);
         console.info("this.replaceArray=" + this.replaceArray);
     },
-    test() {
-    },
     creatDialog() {
         let tt = this.$element('textContainer');
 //        tt.style.color = '#000';
@@ -143,10 +141,20 @@ export default {
         res.then(a => {
             console.info("a: " + a)
         })
-        console.info(" " + this.test2());
+        console.info("return " + this.test2());
     },
+    sleep(delay) {
+        var start = (new Date()).getTime();
+        while ((new Date()).getTime() - start < delay) {
+            continue;
+        }
+    },
+    // js函数如果只是声明async，并不会异步调用，只有碰到await 等待结果
+    // 主线程继续执行
     test: async function() {
         let a = 2;
+        this.sleep(2000);
+        console.info("sleep 2s finised");
         return a;
     },
     test2() {
@@ -176,7 +184,12 @@ export default {
         console.log('getUserInfo finished userInfo.isVip->'+userInfo.isVip)
         console.log('getUserInfo finished userInfo.noField->'+userInfo.noField)
         // js 异常为何不crash，只是不往下执行，还是有日志的，爆红,
-        console.log('getUserInfo finished userInfo.noField.data->'+userInfo.noField.data)
+        try {
+            console.log('getUserInfo finished userInfo.noField.data->'+userInfo.noField.data)
+        } catch(e) {
+            console.log(" is error by catch");
+        }
+
 
         const vipGoods = await this.getVipGoods(userInfo)
         this.showVipGoods(vipGoods)
