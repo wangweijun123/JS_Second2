@@ -6,7 +6,7 @@
 .left-container {
     flex-direction: column;
     weights: 1;
-    
+
 }
 
 .right-container {
@@ -25,7 +25,6 @@
     color: #000000;
     margin-bottom: 10px;
     font-size: 20px;
-    /* 指定文本的高度，文字多的话自动缩放 */
     line-height: 50px;
     background-color: brown;
 }
@@ -48,7 +47,6 @@
 .paragraphSecond-text {
     color: #000000;
     font-size: 20px;
-/* 指定文本的高度，文字多的话自动缩放 */
     background-color: brown;
     flex: 1;
 }
