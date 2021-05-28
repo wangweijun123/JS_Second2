@@ -1,0 +1,75 @@
+<!-- root.hml -->
+<div class="container">
+        <text>justify-content 作用于主轴</text>
+        <div class="container1">
+                <text class="text-style">xxxx</text>
+                <text class="text-style2">yyy</text>
+        </div>
+        <div class="container2">
+                <text class="text-style3">xxxx</text>
+                <text class="text-style3">yyy</text>
+                <text class="text-style3">xxxx</text>
+                <text class="text-style3">yyy</text>
+        </div>
+        <text>align-items 作用于交叉轴(与主轴相反), 当前行的交叉轴对齐</text>
+        <div class="container3">
+                <text class="text-style4">xxxxdddddddd</text>
+                <text class="text-style4">yyy</text>
+                <text class="text-style4">xxxx</text>
+                <text class="text-style4">yyyaaa</text>
+        </div>
+        <div class="container4">
+                <text class="text-style5">xxxxdddddddd</text>
+                <text class="text-style4">yyy</text>
+                <text class="text-style4">xxxx</text>
+                <text class="text-style4">yyyaaa</text>
+        </div>
+
+        <text>align-content </text>
+        <div class="container5">
+                <text class="text-style6">xxxxdddddddd</text>
+                <text class="text-style6">yyy</text>
+                <text class="text-style6">xxxx</text>
+                <text class="text-style6">yyyaaa</text>
+        </div>
+
+<!-- xxx.hml -->
+                <div class="flex-box">
+                        <div class="flex-item color-primary"></div>
+                        <div class="flex-item color-warning"></div>
+                        <div class="flex-item color-success"></div>
+                </div>
+
+<!-- xxx.hml -->
+        <div class="flex-box2">
+                <div class="flex-item2 color-primary" for="{{persons}}">
+                        <text>{{$item.id}}</text>
+                </div>
+               <!-- <div class="flex-item2 color-warning"></div>
+                <div class="flex-item2 color-success"></div>-->
+        </div>
+
+        <!--<div class="common grid-parent">
+                <div class="grid-child grid-left-top"></div>
+                <div class="grid-child grid-left-bottom"></div>
+                <div class="grid-child grid-right-top"></div>
+                <div class="grid-child grid-right-bottom"></div>
+        </div>-->
+
+        <div class="container_grid">
+                <grid-container id="mygrid" columns="2" gutter="20px" style="background-color: pink;">
+                        <grid-row style="height:80px;justify-content:space-around;" for="{{persons}}">
+                                <grid-col style="background-color: brown;">
+                                        <div style="align-items: center;justify-content: center;height: 100%;width: 100%;">
+                                                <text style="color: dodgerblue;" onclick="getCol">{{$idx}}  {{$item.name}}</text>
+                                        </div>
+                                </grid-col>
+                                <grid-col  style="background-color:orange;">
+                                        <div style="width: 100%;height: 100%;padding: 20px;align-items: center;">
+                                                <text onclick="getColWidth"> {{$idx}}  {{$item.name}}</text>
+                                        </div>
+                                </grid-col>
+                        </grid-row>
+                </grid-container>
+        </div>
+</div>
