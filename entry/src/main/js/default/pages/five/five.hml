@@ -34,7 +34,7 @@
         <input type="button" class="button" value="这是带有状态的按钮(禁用)" onclick="changeBtnDisable"
                disabled="{{isBtnDisable}}"></input>
     </div>
-    <input type="button" class="button" value="获取全局数据以及函数" onclick="callGloabMethodAndData"
+    <input type="button" class="button" value="获取全局数据以及函数(在app.js中定义)" onclick="callGloabMethodAndData"
            ></input>
 
     <!-- ##########  -->
@@ -57,7 +57,5 @@
             <div style="width: 25%; height: 250px; background-color: green;"></div>
         <div style="background-color: white; width: 10px;"></div>
             <div style="width: 25%; height: 250px; background-color: blue;"></div>
-        <input type="button" class="button" value="跳转第六个界面" onclick="jumpSixPage"
-                ></input>
     </div>
 </div>
