@@ -4,7 +4,6 @@
         <text >{{name}} {{age}}</text>
     </div>
     <button style="text-color: #fff;" class="button" type="capsule" value="js跳转java页面更多功能" onclick="js2JavaPage"></button>
-    <button style="text-color: #fff;" class="button" type="capsule" value="js跳转包含子界面" onclick="jumpfourthPage"></button>
     <button class="button" type="capsule" value="js 创建dialog" onclick="creatDialog"></button>
     <button class="button" type="capsule" value="js给java注册callback对象(订阅异步)" onclick="registerJsCallbackToJava10"></button>
     <button class="button" type="capsule" value="js给java注册callback对象(订阅同步)" onclick="registerJsCallbackToJavaSync"></button>
