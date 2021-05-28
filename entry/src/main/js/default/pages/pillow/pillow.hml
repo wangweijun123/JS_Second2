@@ -1,0 +1,34 @@
+<div class="container">
+    <!-- 服务精选 -->
+    <div class="good-service-select">
+        <text class="good-service-title">服务精选</text>
+        <image class="image-back" src="/common/back.png"></image>
+    </div>
+    <div style="margin-left: 8px;">
+        <div class="good-service-wrap" for="{{servers}}">
+            <stack class="stack-center">
+                <image class="good-service-image"></image>
+                <image class="item-icon" src="/common/icon_item.png"></image>
+            </stack>
+            <text class="item-title">{{$item.title}}</text>
+            <text class="good-service-sub-title">{{$item.subTitle}}</text>
+        </div>
+    </div>
+
+    <!-- 设备推荐 -->
+    <div class="device-recommend">
+        <text class="good-service-title">设备推荐</text>
+        <image class="image-back" src="/common/back.png"></image>
+    </div>
+
+    <div style="margin-left: 8px;">
+        <div class="device-recommend-wrap" for="{{persons}}" onclick="onItemClick({{$item}})">
+            <stack class="stack-center">
+                <image class="device-recommend-image"></image>
+                <image class="item-icon" src="/common/icon_item.png"></image>
+            </stack>
+            <text class="item-title">特训营</text>
+            <text class="good-service-sub-title">平稳并核发真大大大大大大呃呃呃呃</text>
+        </div>
+    </div>
+</div>
