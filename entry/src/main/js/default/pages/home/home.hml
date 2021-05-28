@@ -1,0 +1,9 @@
+
+<refresh id="refresh" onpulldown="onPulldown" onrefresh="onRefresh">
+    <div class="container">
+        <div class="container_array" for="{{funArray}}">
+            <text class="text" onclick="onItemClick({{$idx}})">{{$idx}}-->  {{$item.title}} -->{{$item.uri}} </text>
+            <divider if="{{ !($idx == funArray.length-1)}}" vertical="false" style="height:4px; width: 100%; color: green;"></divider>
+        </div>
+    </div>
+</refresh>
