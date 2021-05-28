@@ -50,12 +50,15 @@
     "js": [
       {
         "pages": [
+          "pages/home/home",
           "pages/index/index",
           "pages/detail/detail",
           "pages/third/third",
           "pages/fourth/fourth",
           "pages/five/five",
-          "pages/six/root"
+          "pages/six/root",
+          "pages/seven/seven",
+          "pages/pillow/pillow"
         ],
         "name": "default",
         "window": {
