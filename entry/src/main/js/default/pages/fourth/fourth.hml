@@ -13,6 +13,7 @@
     <button style="text-color: #fff;" class="button" type="capsule"
             value="跳转第五个界面，数组测试" onclick="jumpFive"></button>
     <text>
+        <!-- for标签，根据数据重复组件 -->
         <span class="{{itemStyle[$item.myIndex]}}" for="{{text}}">{{$item.content}}</span>
     </text>
 <!-- 传递额外参数 -->
