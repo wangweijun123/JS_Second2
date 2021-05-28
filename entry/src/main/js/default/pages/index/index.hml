@@ -10,20 +10,24 @@
             <image class="zan-img" src="{{isZan ? zanImagePressed : zanImageNormal}}"/>
             <text class="number-text">{{number}}</text>
         </div>
-        <!-- 跳转第二个页面  red blue-->
+        <!-- 跳转第二个页面-->
         <button type="capsule" onclick="launch">跳转第二个页面</button>
+        
             <list>
                 <list-item for="{{persons}}">
-                    <text class="{{itemStyle[$item.index]}}">{{$item.index}}{{$item.name}}</text>
+                    <!-- $idx 可以取数组的索引 -->
+                    <text class="{{itemStyle[$item.index]}}">{{$idx}}{{$item.name}}</text>
                 </list-item>
             </list>
         <text class="paragraphSecond-text">{{paragraphSecond}}</text>
+        <!-- if else 标签一对 -->
+        <text class="commit-text" if="{{isCommit}}">评论</text>
+        <text class="commit-text" else>xxxxxx</text>
 
         <!-- 评论区 -->
         <div class="commit-container">
                 <text class="commit-text" if="{{!isCommit}}">评论</text>
                 <text class="commit-text" if="{{isCommit}}">{{inputValue}}</text>
-            <!--div容器 默认横向摆放-->
             <div class="wrap-comment">
                 <input class="comment" value="{{inputValue}}" onchange="updateValue"></input>
                 <text class="done-text" onclick="submitCommit">提交</text>
