@@ -30,6 +30,8 @@ public class CalcInternalAbility extends AceInternalAbility {
     private static final int CHENG = 1002;
     private static final int CHU = 1003;
     private static final int REGISTER_JS_CALLBACK = 10000;
+    private static final int CALL_REMOTE_SERVICE = 100000;
+
     private static final int START_ABILITY = 9999;
 
     private static CalcInternalAbility instance;
@@ -49,7 +51,7 @@ public class CalcInternalAbility extends AceInternalAbility {
         LogUtil.info(TAG, "MainAbility::CalcInternalAbility onRemoteRequest code:"+code + " option:"+option
         +", tid:"+Thread.currentThread().getId() + ", " + Thread.currentThread().getName());
         try {
-            Thread.sleep(500);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -82,7 +84,8 @@ public class CalcInternalAbility extends AceInternalAbility {
                 }
                 break;
             }
-            case CHENG: {
+            case CHENG:
+            case CALL_REMOTE_SERVICE:{
                 if (plus(data, reply, option, 3000)) return false;
                 break;
             }
