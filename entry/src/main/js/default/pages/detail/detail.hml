@@ -23,8 +23,10 @@
     <div class="fixed-height-container">
         <text class="text1">dddd</text>
         <text class="text2">xxxx</text>
-        <image class="image" src="/common/ic_health_assistant.png"/>
+        <image class="image" src="/common/meinv.jpg"/>
     </div>
+
+
 
     <button type="capsule" value="Go back" onclick="launch"></button>
     <button class="button" type="capsule" value="调用java内部服务callAbility(指定java侧异步处理)" onclick="callInternalService"></button>
