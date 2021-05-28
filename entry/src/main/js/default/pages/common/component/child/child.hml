@@ -2,4 +2,11 @@
 <div class="item" onclick="textClicked">
     <text class="text-style" onclick="childClicked">child component clicked</text>
     <text class="text-style" if="{{showObj}}">hello child component</text>
+
+
+    <div class="container">
+        <image-animator class="image-player" id="animator"
+                        images="{{images}}" duration="1s"
+                        onclick="handleClick"></image-animator>
+    </div>
 </div>
