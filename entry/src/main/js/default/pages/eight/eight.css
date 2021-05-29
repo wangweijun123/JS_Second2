@@ -1,0 +1,31 @@
+@import '../common/style/style.css';
+.container {
+    flex-direction: column;
+    background-color: antiquewhite;
+}
+
+.flex-box {
+    flex-wrap: wrap;
+    width: 720px;
+    height: 250px;
+    background-color: #ffffff;
+}
+.flex-item {
+    width: 350px;
+    height: 120px;
+    border-radius: 16px;
+    margin: 5px;
+    background-color: #007dff;
+}
+
+
+.text-style {
+    font-size: 100px;
+    color: white;
+}
+
+
+
+
+
+

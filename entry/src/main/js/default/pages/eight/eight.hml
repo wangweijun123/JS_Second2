@@ -1,0 +1,7 @@
+<!-- root.hml -->
+<div class="flex-box">
+        <div class="flex-item" for="{{persons}}"
+             onclick="onItemClick({{$item}})">
+                <text class="text-style">{{$item.id}}</text>
+        </div>
+</div>

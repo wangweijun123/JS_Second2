@@ -58,7 +58,8 @@
           "pages/five/five",
           "pages/six/root",
           "pages/seven/seven",
-          "pages/pillow/pillow"
+          "pages/pillow/pillow",
+          "pages/eight/eight"
         ],
         "name": "default",
         "window": {

@@ -12,6 +12,7 @@ export default {
                 {title:'第六个js页面(子控件与父控件交互)', uri: "pages/six/root"},
                 {title:'高级ui(父控件控制子控件渲染)', uri: "pages/seven/seven"},
                 {title:'智能枕头', uri: "pages/pillow/pillow"},
+                {title:'列表', uri: "pages/eight/eight"},
 
         ],
         plugResult: undefined,
