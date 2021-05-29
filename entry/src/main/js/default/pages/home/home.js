@@ -16,6 +16,7 @@ export default {
 
         ],
         plugResult: undefined,
+        isRefreshing : false,
     },
     onItemClick(idx) {
         console.info(idx);
@@ -26,10 +27,12 @@ export default {
             params:{
 
             }
-        })
+        });
     },
     onRefresh(e) {
         console.info("refreshing : " + e.refreshing);
+        // 这句话必须加
+        this.isRefreshing = e.refreshing;
         if (e.refreshing) {
             // 下拉刷新加载数据
             this.loadData();
@@ -54,6 +57,7 @@ export default {
             // 隐藏刷新进度条
             const refresh = this.$element('refresh');
             console.info("refresh :"+refresh);
+            this.isRefreshing = false;
         });
         console.info("js MainAbility load finised");
     },

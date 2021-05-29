@@ -45,8 +45,6 @@
                 <div class="flex-item2 color-primary" for="{{persons}}">
                         <text>{{$item.id}}</text>
                 </div>
-               <!-- <div class="flex-item2 color-warning"></div>
-                <div class="flex-item2 color-success"></div>-->
         </div>
 
         <!--<div class="common grid-parent">
@@ -55,8 +53,18 @@
                 <div class="grid-child grid-right-top"></div>
                 <div class="grid-child grid-right-bottom"></div>
         </div>-->
+        <div class="common grid-parent">
+                <div class="grid-child"
+                     style="grid-row-start: {{$item.idx / persons.length}};
+                        grid-row-end: {{$item.idx / persons.length}};
 
-        <div class="container_grid">
+                        grid-column-start: {{$item.idx % persons.length}};
+                        grid-column-end: {{$item.idx % persons.length}};
+                        background-color: #00aaee;" for="{{persons}}">
+                </div>
+        </div>
+
+        <!--<div class="container_grid">
                 <grid-container id="mygrid" columns="2" gutter="20px" style="background-color: pink;">
                         <grid-row style="height:80px;justify-content:space-around;" for="{{persons}}">
                                 <grid-col style="background-color: brown;">
@@ -71,5 +79,5 @@
                                 </grid-col>
                         </grid-row>
                 </grid-container>
-        </div>
+        </div>-->
 </div>
