@@ -7,7 +7,6 @@
 .flex-box {
     flex-wrap: wrap;
     width: 720px;
-    height: 250px;
     background-color: #ffffff;
 }
 .flex-item {
