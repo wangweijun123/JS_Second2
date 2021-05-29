@@ -10,7 +10,7 @@
             <image class="zan-img" src="{{isZan ? zanImagePressed : zanImageNormal}}"/>
             <text class="number-text">{{number}}</text>
         </div>
-        <!-- 跳转第二个页面-->
+
         <button type="capsule" onclick="launch">跳转第二个页面</button>
         
             <list>

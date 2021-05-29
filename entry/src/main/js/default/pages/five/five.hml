@@ -58,4 +58,7 @@
         <div style="background-color: white; width: 10px;"></div>
             <div style="width: 25%; height: 250px; background-color: blue;"></div>
     </div>
+    
+    <!-- 根据数据列表，展开当前元素 -->
+    <text style="background-color: bisque;" for="{{persons}}">{{$item.gender}}</text>
 </div>

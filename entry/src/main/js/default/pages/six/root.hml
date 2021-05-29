@@ -5,4 +5,6 @@
         <text>{{text}}</text>
         <parentComp></parentComp>
     </div>
+
+    <text class="text">ddddddddddxxxxx</text>
 </div>
