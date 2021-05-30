@@ -109,16 +109,7 @@ export default {
         let resultObj = JSON.parse(resultStr);
         console.info('result is:' + JSON.stringify(resultObj));
     },
-    js2JavaPage() {
-        // bundleName, abilityName ,startAbilityCallback
-        let bundleName = 'com.huawei.hiaceservice';
-        let abilityName = 'com.huawei.hiaceservice.CalcInternalAbility';
-        common.startAbility3(bundleName, abilityName, callbackData => {
-            console.info('js2JavaPage chuan callback :' + callbackData);
-            let jsonCallback = JSON.parse(callbackData);
-            console.info('js2JavaPage chuan :' + jsonCallback);
-        });
-    },
+
 // 传入callback
     registerJsCallbackToJava10() {
         this.registerJsCallbackToJava2(callbackData => {

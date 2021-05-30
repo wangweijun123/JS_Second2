@@ -5,6 +5,7 @@ import com.huawei.health.bloodsugar.LogUtil;
 
 import ohos.aafwk.ability.AbilitySlice;
 import ohos.aafwk.content.Intent;
+import ohos.aafwk.content.Operation;
 import ohos.agp.components.Component;
 import ohos.agp.components.ComponentContainer;
 import ohos.agp.components.DirectionalLayout;
@@ -19,6 +20,8 @@ public class FourthPageSlice extends AbilitySlice implements Component.ClickedLi
     private static final String TAG = "FourthPageSlice";
     private static final int EVENT_MESSAGE_NORMAL = 1;
     private static final int EVENT_MESSAGE_DELAY = 2;
+    private static final int REQ_CODE_QUERY_WEATHER = 100;
+    private static final int REQ_CODE_START_ABILITY_FOR_RESULT = 101;
 
     private static final int EVENT_MESSAGE_CROSS_THREAD = 3;
 
@@ -90,6 +93,8 @@ public class FourthPageSlice extends AbilitySlice implements Component.ClickedLi
         findComponentById(ResourceTable.Id_threadTest).setClickedListener(this);
         findComponentById(ResourceTable.Id_postTaskTest).setClickedListener(this);
         findComponentById(ResourceTable.Id_uiThreadTest).setClickedListener(this);
+        findComponentById(ResourceTable.Id_jumpOtherAppAbilityPage).setClickedListener(this);
+        findComponentById(ResourceTable.Id_queryWeather).setClickedListener(this);
         text = (Text) findComponentById(ResourceTable.Id_text_helloworld);
         //create()的参数是 true时或者名字，则为托管模式，内部创建新的线程
         EventRunner runner = EventRunner.create("downloadRunner");
@@ -113,7 +118,46 @@ public class FourthPageSlice extends AbilitySlice implements Component.ClickedLi
             case ResourceTable.Id_uiThreadTest:
                 uiThreadTest();
                 break;
+            case ResourceTable.Id_jumpOtherAppAbilityPage:
+                jumpOtherAppAbilityPage();
+                break;
+            case ResourceTable.Id_queryWeather:
+                queryWeather();
+                break;
+
+
         }
+    }
+
+    private void queryWeather() {
+        Intent intent = new Intent();
+        Operation operation = new Intent.OperationBuilder()
+                .withAction(Intent.ACTION_QUERY_WEATHER)
+                .build();
+        intent.setOperation(operation);
+        startAbilityForResult(intent, REQ_CODE_QUERY_WEATHER);
+    }
+
+    private void jumpOtherAppAbilityPage() {
+        Intent intent = new Intent();
+        // 两种方式启动第三方app的ability page
+        // 第一种，通过BundleName 与 AbilityName
+        // 通过Intent中的OperationBuilder类构造operation对象，
+        // 指定设备标识（空串表示当前设备）、应用包名、Ability名称
+       /* Operation operation = new Intent.OperationBuilder()
+                .withDeviceId("")
+                .withBundleName("com.example.java_client")
+                .withAbilityName("com.example.java_client.MainAbility")
+                .build();*/
+// 第一种，通过第三方应用配置的action名字，就是一个字符串启动
+        Operation operation = new Intent.OperationBuilder()
+                .withDeviceId("")
+                .withAction("xxxxxx")
+                .build();
+
+        // 把operation设置到intent中
+        intent.setOperation(operation);
+        startAbilityForResult(intent, REQ_CODE_START_ABILITY_FOR_RESULT);
     }
 
     private void uiThreadTest() {
@@ -212,5 +256,23 @@ public class FourthPageSlice extends AbilitySlice implements Component.ClickedLi
             }
         });
         directionalLayout.addComponent(button);*/
+    }
+
+    @Override
+    protected void onAbilityResult(int requestCode, int resultCode, Intent resultData) {
+        LogUtil.info(TAG, "resultCode:"+resultCode);
+        if (resultData != null) {
+            int xxx = resultData.getIntParam("xxx", -10);
+            LogUtil.info(TAG, "xxx :"+xxx);
+        }
+        switch (requestCode) {
+            case REQ_CODE_QUERY_WEATHER:
+                // Do something with result.
+                return;
+            case REQ_CODE_START_ABILITY_FOR_RESULT:
+                break;
+            default:
+                break;
+        }
     }
 }

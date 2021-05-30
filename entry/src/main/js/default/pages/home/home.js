@@ -13,20 +13,36 @@ export default {
                 {title:'高级ui(父控件控制子控件渲染)', uri: "pages/seven/seven"},
                 {title:'智能枕头', uri: "pages/pillow/pillow"},
                 {title:'列表', uri: "pages/eight/eight"},
+                {title:'js页面跳转java页面FourthPageAbility', uri: "", page:'java'},
 
         ],
         plugResult: undefined,
         isRefreshing : false,
     },
     onItemClick(idx) {
-        console.info(idx);
         let obj = this.funArray[idx];
-        console.info(obj.uri);
-        router.push({
-            uri: obj.uri,
-            params:{
+        console.info(idx + ", obj.page = "+obj.page);
+        console.info("obj.page === 'java' ? "+(obj.page === 'java'));
+        if (obj.page === 'java') {
+            this.js2JavaPage();
+        } else {
+            console.info(obj.uri);
+            router.push({
+                uri: obj.uri,
+                params:{
 
-            }
+                }
+            });
+        }
+    },
+    js2JavaPage() {
+        // bundleName, abilityName ,startAbilityCallback
+        let bundleName = 'com.huawei.hiaceservice';
+        let abilityName = 'com.huawei.hiaceservice.CalcInternalAbility';
+        common.startAbility3(bundleName, abilityName, callbackData => {
+            console.info('js2JavaPage chuan callback :' + callbackData);
+            let jsonCallback = JSON.parse(callbackData);
+            console.info('js2JavaPage chuan :' + jsonCallback);
         });
     },
     onRefresh(e) {
