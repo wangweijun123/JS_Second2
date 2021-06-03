@@ -1,0 +1,39 @@
+@import '../common/style/style.css';
+.container {
+    flex-direction: column;
+    background-color: antiquewhite;
+}
+
+.list-style {
+    columns: 1;
+    divider-color:green;
+}
+
+.list-style2 {
+    columns: 5;
+    divider-color:green;
+    background-color:#B2E84E;
+}
+
+
+.text-style {
+    font-size: 24px;
+    color: white;
+    background-color: red;
+}
+
+.item-bg {
+    background-color: #007dff;
+    margin: 10px;
+}
+
+.item-bg2 {
+    background-color: #37FF00;
+    margin: 10px;
+}
+
+
+
+
+
+

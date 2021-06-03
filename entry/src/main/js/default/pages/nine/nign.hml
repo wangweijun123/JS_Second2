@@ -1,0 +1,23 @@
+<!-- root.hml -->
+<div class="container">
+        <list id="list" class="list-style2" scrollbar="on"
+              on:touchstart="touchstart"
+              divider="true">
+                <list-item class="{{getBgColor($item.index)}}" 
+                           for="{{persons}}"
+                        onlongpress="onlongpress">
+                <!-- $idx 可以取数组的索引 -->
+                        <text class="text-style">{{$idx}}         {{$item.name}}</text>
+                </list-item>
+        </list>
+        <list id="list2" class="list-style" scrollbar="on"
+              on:touchstart="touchstart"
+              divider="true">
+                <list-item class="{{getBgColor($item.index)}}"
+                           for="{{persons}}"
+                           onlongpress="onlongpress">
+                <!-- $idx 可以取数组的索引 -->
+                        <text class="text-style">{{$idx}}         {{$item.name}}</text>
+                </list-item>
+        </list>
+</div>

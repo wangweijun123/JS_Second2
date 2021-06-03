@@ -14,6 +14,8 @@ export default {
                 {title:'智能枕头', uri: "pages/pillow/pillow"},
                 {title:'列表', uri: "pages/eight/eight"},
                 {title:'js页面跳转java页面FourthPageAbility', uri: "", page:'java'},
+                {title:'列表', uri: "pages/nine/nign"},
+
 
         ],
         plugResult: undefined,
