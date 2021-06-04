@@ -13,7 +13,6 @@
   },
   "deviceConfig": {},
   "module": {
-    "reqPermissions" : [{ "name": "ohos.permission.INTERNET"}],
     "package": "com.huawei.health.bloodsugar",
     "name": ".MyApplication",
     "deviceType": [
@@ -60,14 +59,18 @@
           "pages/six/root",
           "pages/seven/seven",
           "pages/pillow/pillow",
-          "pages/eight/eight",
-          "pages/nine/nign"
+          "pages/pillow2/services"
         ],
         "name": "default",
         "window": {
           "designWidth": 720,
           "autoDesignWidth": false
         }
+      }
+    ],
+    "reqPermissions": [
+      {
+        "name": "ohos.permission.INTERNET"
       }
     ]
   }
