@@ -1,6 +1,6 @@
 import router from '@system.router';
 import common from "../common/common";
-
+import file from '@system.file';
 
 // abilityType: 0-Ability; 1-Internal Ability
 const ABILITY_TYPE_EXTERNAL = 0;
@@ -109,7 +109,16 @@ export default {
         let resultObj = JSON.parse(resultStr);
         console.info('result is:' + JSON.stringify(resultObj));
     },
-
+    js2JavaPage() {
+        // bundleName, abilityName ,startAbilityCallback
+        let bundleName = 'com.huawei.hiaceservice';
+        let abilityName = 'com.huawei.hiaceservice.CalcInternalAbility';
+        common.startAbility3(bundleName, abilityName, callbackData => {
+            console.info('js2JavaPage chuan callback :' + callbackData);
+            let jsonCallback = JSON.parse(callbackData);
+            console.info('js2JavaPage chuan :' + jsonCallback);
+        });
+    },
 // 传入callback
     registerJsCallbackToJava10() {
         this.registerJsCallbackToJava2(callbackData => {
@@ -227,6 +236,20 @@ export default {
     callOtherJs() {
         //        new Promise()
         common.openBluetoothAdapter();
+    },
+    fileTest() {
+        // 对应着这个路径   /data/data/com.huawei.health.bloodsugar/files
+        let uri = 'internal://app/test.txt';
+        file.writeText({
+            uri: uri,
+            text: 'Text that just for test.',
+            success: function() {
+                console.log('call writeText success.');
+            },
+            fail: function(data, code) {
+                console.error('call fail callback fail, code: ' + code + ', data: ' + data);
+            },
+        });
     },
     jumpfourthPage() {
         console.info('fourth ...');
