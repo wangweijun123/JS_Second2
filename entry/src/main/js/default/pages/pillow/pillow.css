@@ -51,6 +51,9 @@
 .stack-center {
     align-items: center;
     justify-content: center;
+    width: 156px;
+    height: 156px;
+    background-color: blue;
 }
 
 .good-service-image {
