@@ -81,3 +81,11 @@
     text-align: center;
     flex-direction: column;
 }
+
+.device-recommend-wrap {
+    background-color: #2BE234;
+}
+
+.device-recommend-wrap-last {
+    background-color: blueviolet;
+}
