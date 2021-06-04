@@ -3,8 +3,12 @@ import router from '@system.router';
 export default {
     data: {
         array: [
-                {id: 1, name: 'jack', age: 18},
-                {id: 2, name: 'tony', age: 18},
+                {id: 0, name: 'jack', age: 18},
+                {id: 1, name: 'tony', age: 18},
+        ],
+        array2: [
+                {id: 0, name: 'duanxia', age: 18},
+                {id: 1, name: 'wxj', age: 18},
         ],
         persons:[
                 {id:1, gender:'man', age:47},
@@ -22,6 +26,13 @@ export default {
             OS: 'HarmonyOS',
             Version: '2.0',
         },
+    },
+    getItemStyleByIndex: function(idx, name) {
+        console.info("getItemStyleByIndex idx："+idx + " " + name);
+        if (idx == 1) {
+            return 'device-recommend-wrap-last';
+        }
+        return 'device-recommend-wrap';
     },
     onInit() {
        let num = this.myFunc(222)
@@ -44,6 +55,19 @@ export default {
         this.appData = this.$app.$def.globalData.appData;
         console.info("从app获取全局信息:" + this.appData);
         this.$app.$def.globalMethod();
+    },
+    objectKeys() {
+        for (let key of Object.keys(this.keyMap)) {
+            console.info(key + " " + JSON.stringify(this.keyMap[key]));
+        }
+
+        for (let key of Object.keys(this.array)) {
+            console.info(key + " " + JSON.stringify(this.array[key]));
+        }
+
+        for(var i in this.array) {
+            console.info( i + " "+ JSON.stringify(this.array[i]));
+        }
     },
     jumpSixPage() {
         router.push({
