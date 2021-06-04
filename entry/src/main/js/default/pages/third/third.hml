@@ -12,6 +12,7 @@
     <button class="button" type="capsule" value="async 异步调用02" onclick="asyncAwait2"></button>
     <button class="button" type="capsule" value="async 测试异常" onclick="asyncAwait3"></button>
     <button class="button" type="capsule" value="js文件引用其他的js文件测试" onclick="callOtherJs"></button>
+    <button class="button" type="capsule" value="文件操作" onclick="fileTest"></button>
 
     <dialog id="myDialog">
         <div style="flex-direction: column;justify-content: center; align-items: center;">
