@@ -24,6 +24,11 @@
         <text class="text1">dddd</text>
         <text class="text2">xxxx</text>
         <image class="image" src="/common/meinv.jpg"/>
+
+         <stack class="stack-center">
+
+            <image class="image" src="https://hag-ability-test.obs.myhwclouds.com/icon/20200401200608850ee3afa5ee4ea6b6913a1a2ace4c19.png"/>
+         </stack>
     </div>
 
 
