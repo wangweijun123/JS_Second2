@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="good-service-select"  onclick="showAllServices">
+        <text class="good-service-title">{{ $t('strings.public_more_service') }}</text>
+        <image class="image-back" src="/common/base/ic_public_arrow_right@3x.png"></image>
+    </div>
+    <div style="margin-left: 4px; background-color: green;">
+        <div class="good-service-wrap" for="{{services}}" style="background-color: blue;">
+            <stack class="stack-center-good-service" style="background-color: aquamarine;">
+                <image class="item-icon" src="/common/icon_item.png"></image>
+                <image class="good-service-image" src="{{$item.iconUrl}}"></image>
+            </stack>
+            <text class="item-title" style="background-color: red;">{{$item.name}}</text>
+            <text class="good-service-sub-title" style="background-color: aqua;">{{$item.brief}}</text>
+        </div>
+    </div>
+
+    <div class="device-recommend"  onclick="showAllDevices">
+        <text class="good-service-title">{{ $t('strings.public_devices_recommendation') }}</text>
+        <image class="image-back" src="/common/base/ic_public_arrow_right@3x.png"></image>
+    </div>
+
+    <div style="margin-left: 4px;">
+        <div class="device-recommend-wrap" for="{{devices}}" onclick="onItemClick({{$item}})">
+            <stack class="stack-center">
+                <image class="item-icon" src="/common/icon_item.png"></image>
+                <image class="device-recommend-image" src="{{$item.iconUrl}}"></image>
+            </stack>
+            <text class="item-title">特训营</text>
+            <text class="good-service-sub-title">平稳并核发真大大大大大大呃呃呃呃</text>
+        </div>
+    </div>
+</div>
