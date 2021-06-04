@@ -6,6 +6,8 @@
     "object": "Object parameter substitution-{name}",
     "array": "Array type parameter substitution-{0}{1}",
     "symbol": "@#$%^&*()_+-={}[]\\|:;\"'<>,./?",
-    "object2": "Object parameter substitution-{name}-----{age}"
+    "object2": "Object parameter substitution-{name}-----{age}",
+    "public_more_service": "服务精选",
+    "public_devices_recommendation": "设备推荐"
   }
 }
