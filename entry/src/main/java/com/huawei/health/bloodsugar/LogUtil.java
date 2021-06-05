@@ -72,9 +72,9 @@ public class LogUtil {
      * @return log
      */
     public static int info(String tag, String msg) {
-        // return HiLog.info(getHiLogLabel(tag), msg);
-        System.out.println(tag + "->" + msg);
-        return 0;
+         return HiLog.info(getHiLogLabel(tag), msg);
+//        System.out.println(tag + "->" + msg);
+//        return 0;
     }
 
     /**

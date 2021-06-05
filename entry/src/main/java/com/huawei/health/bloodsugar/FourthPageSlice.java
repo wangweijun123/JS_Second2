@@ -12,6 +12,9 @@ import ohos.agp.components.DirectionalLayout;
 import ohos.agp.components.Text;
 import ohos.agp.utils.LayoutAlignment;
 import ohos.app.Context;
+import ohos.app.dispatcher.TaskDispatcher;
+import ohos.app.dispatcher.task.Revocable;
+import ohos.app.dispatcher.task.TaskPriority;
 import ohos.eventhandler.EventHandler;
 import ohos.eventhandler.EventRunner;
 import ohos.eventhandler.InnerEvent;
@@ -95,6 +98,9 @@ public class FourthPageSlice extends AbilitySlice implements Component.ClickedLi
         findComponentById(ResourceTable.Id_uiThreadTest).setClickedListener(this);
         findComponentById(ResourceTable.Id_jumpOtherAppAbilityPage).setClickedListener(this);
         findComponentById(ResourceTable.Id_queryWeather).setClickedListener(this);
+        findComponentById(ResourceTable.Id_syncDispatchTest).setClickedListener(this);
+        findComponentById(ResourceTable.Id_asyncDispatchTest).setClickedListener(this);
+        findComponentById(ResourceTable.Id_getUITaskDispatcher).setClickedListener(this);
         text = (Text) findComponentById(ResourceTable.Id_text_helloworld);
         //create()的参数是 true时或者名字，则为托管模式，内部创建新的线程
         EventRunner runner = EventRunner.create("downloadRunner");
@@ -103,6 +109,7 @@ public class FourthPageSlice extends AbilitySlice implements Component.ClickedLi
             return;
         }
         myHandler = new MyEventHandler(runner);
+
     }
 
     @Override
@@ -124,9 +131,98 @@ public class FourthPageSlice extends AbilitySlice implements Component.ClickedLi
             case ResourceTable.Id_queryWeather:
                 queryWeather();
                 break;
-
+            case ResourceTable.Id_syncDispatchTest:
+                syncDispatchTest();
+                break;
+            case ResourceTable.Id_asyncDispatchTest:
+                asyncDispatchTest();
+                break;
+            case ResourceTable.Id_getUITaskDispatcher:
+                getUITaskDispatcherTest();
+                break;
 
         }
+    }
+
+    private void getUITaskDispatcherTest() {
+        TaskDispatcher globalTaskDispatcher = getGlobalTaskDispatcher(TaskPriority.DEFAULT);
+            Revocable revocable = globalTaskDispatcher.asyncDispatch(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    getUITaskDispatcher().asyncDispatch(new Runnable() {
+                        @Override
+                        public void run() {
+                            LogUtil.info(TAG, "getUITaskDispatcher run tid:"+Thread.currentThread().getId());
+                        }
+                    });
+                    LogUtil.info(TAG, "async task1 run tid:"+Thread.currentThread().getId());
+                }
+            });
+//        revocable.revoke();
+        LogUtil.info(TAG, "after async tid:"+Thread.currentThread().getId());
+    }
+
+    private void asyncDispatchTest() {
+        TaskDispatcher globalTaskDispatcher = getGlobalTaskDispatcher(TaskPriority.DEFAULT);
+        for (int i = 0; i < 10; i++) {
+            Revocable revocable = globalTaskDispatcher.asyncDispatch(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    LogUtil.info(TAG, "async task1 run tid:"+Thread.currentThread().getId());
+                }
+            });
+        }
+//        revocable.revoke();
+        LogUtil.info(TAG, "after async tid:"+Thread.currentThread().getId());
+
+// 执行结果可能如下：
+// after async task1
+// async task1 run
+    }
+
+    private void syncDispatchTest() {
+        TaskDispatcher globalTaskDispatcher = getGlobalTaskDispatcher(TaskPriority.DEFAULT);
+        globalTaskDispatcher.syncDispatch(new Runnable() {
+            @Override
+            public void run() {
+                LogUtil.info(TAG, "sync task1 run");
+            }
+        });
+        LogUtil.info(TAG, "after sync task1");
+
+        globalTaskDispatcher.syncDispatch(new Runnable() {
+            @Override
+            public void run() {
+                LogUtil.info(TAG, "sync task2 run");
+            }
+        });
+        LogUtil.info(TAG, "after sync task2");
+
+        globalTaskDispatcher.syncDispatch(new Runnable() {
+            @Override
+            public void run() {
+                LogUtil.info(TAG, "sync task3 run");
+            }
+        });
+        LogUtil.info(TAG, "after sync task3");
+
+// 执行结果如下：
+// sync task1 run
+// after sync task1
+// sync task2 run
+// after sync task2
+// sync task3 run
+// after sync task3
     }
 
     private void queryWeather() {

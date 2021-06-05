@@ -54,5 +54,27 @@
         ohos:top_margin="10vp"
         ohos:id="$+id:queryWeather"/>
 
+    <Button
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:text="派发同步任务"
+        ohos:text_size="20vp"
+        ohos:top_margin="10vp"
+        ohos:id="$+id:syncDispatchTest"/>
+    <Button
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:text="异步派发任务"
+        ohos:text_size="20vp"
+        ohos:top_margin="10vp"
+        ohos:id="$+id:asyncDispatchTest"/>
+    <Button
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:text="应用主线程的专有任务分发器"
+        ohos:text_size="20vp"
+        ohos:top_margin="10vp"
+        ohos:id="$+id:getUITaskDispatcher"/>
+
 
 </DirectionalLayout>
