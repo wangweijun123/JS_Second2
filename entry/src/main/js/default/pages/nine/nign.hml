@@ -3,7 +3,7 @@
         <list id="list" class="list-style2" scrollbar="on"
               on:touchstart="touchstart"
               divider="true">
-                <list-item class="{{getBgColor($item.index)}}" 
+                <list-item class="{{getBgColor($item.index)}}"
                            for="{{persons}}"
                         onlongpress="onlongpress">
                 <!-- $idx 可以取数组的索引 -->

@@ -59,7 +59,10 @@
           "pages/six/root",
           "pages/seven/seven",
           "pages/pillow/pillow",
-          "pages/pillow2/services"
+          "pages/pillow2/services",
+          "pages/eight/eight",
+          "pages/nine/nign",
+          "pages/ten/index"
         ],
         "name": "default",
         "window": {
